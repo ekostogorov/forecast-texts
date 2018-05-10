@@ -11,7 +11,8 @@ App. Starting server and handling http requests.
 
 app = Flask(__name__)
 dispatcher = Dispatcher(
-    api_url = config.METEO_API
+    api_url = config.METEO_API,
+    token = config.METEO_TOKEN
 )
 
 # handling message on GET: /forecast
