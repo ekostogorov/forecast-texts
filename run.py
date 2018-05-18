@@ -22,6 +22,12 @@ def handle_forecast():
     query = request.get_json()
     return dispatcher.forecast(query)
 
+@app.route('/current', methods = ['GET'])
+def handle_current():
+    if request.method == 'GET':
+        query = request.get_json()
+        return dispatcher.current(query)
+
 if __name__ == '__main__':
   server = WSGIServer((config.HOST, config.PORT), app)
   print('Python starting at {0}:{1}'.format(config.HOST, config.PORT))
